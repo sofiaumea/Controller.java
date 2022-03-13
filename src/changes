@@ -1,0 +1,6 @@
+Jag har ändrat i XMLParser sådant att enbart episoder inom rätt tidsintervall visas. Detta fungerade
+inte ursprungligen för att inte rätt url-adress användes. Dessutom ändrade jag så att det var rätt
+sträng som faktiskt visades i tabellen(dvs den i rätt tidszon).
+Jag har konstruerat om i Controller så att allt det som faktiskt kräver tid är i worker thread(XMLparsningen) och
+de icke trådsäkra Swingmetoderna(dvs GUI:ts komponenter) executas på EDT. Nu ska rapporten överensstämma
+med min lösning.
